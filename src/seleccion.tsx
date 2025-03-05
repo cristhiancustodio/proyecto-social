@@ -1,5 +1,4 @@
 "use client"
-
 import { createListCollection, HStack, Stack } from "@chakra-ui/react"
 import {
     SelectContent,
@@ -11,6 +10,8 @@ import {
 } from "@/components/ui/select"
 import { Radio, RadioGroup } from "./components/ui/radio"
 
+
+
 export default function Demo() {
     return (
         <>
@@ -20,7 +21,7 @@ export default function Demo() {
                     <SelectValueText placeholder="Select movie" />
                 </SelectTrigger>
                 <SelectContent>
-                    {frameworks.items.map((movie) => (
+                    {frameworks.items.map((movie: { value: string, label: string}) => (
                         <SelectItem item={movie} key={movie.value}>
                             {movie.label}
                         </SelectItem>

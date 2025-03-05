@@ -13,9 +13,7 @@ createRoot(document.getElementById('root')).render(
 		<ChakraProvider value={defaultSystem}>
 			<ColorModeProvider>
 				<BrowserRouter>
-					
 					<App/>
-				
 				</BrowserRouter>
 			</ColorModeProvider>
 		</ChakraProvider>

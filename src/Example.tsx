@@ -111,7 +111,7 @@ export default function Example() {
                     </Card.Root>
                 </Box>
                 <Box>
-                    <Text>Segunda COlumna</Text>
+                    <Text>Segunda Columna</Text>
                     <Demo></Demo>
 
                     <Stack gap="4" mt={3}>

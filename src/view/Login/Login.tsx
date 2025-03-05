@@ -1,6 +1,7 @@
 // App.js
 
 import { Box, Button } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 
 function Login() {

@@ -6,6 +6,7 @@ import Menu from "@/components/layout/menu";
 
 
 export default function RouterBase() {
+
     return (
         <Routes>
             <Route path="/" element={<Menu/>}>
