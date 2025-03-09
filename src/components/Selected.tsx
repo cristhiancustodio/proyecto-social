@@ -7,7 +7,7 @@ import {
     SelectTrigger,
     SelectValueText,
 } from "@/components/ui/select"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface PropsOption {
     value: string;
@@ -26,19 +26,16 @@ interface SelectedProps {
 }
 
 
-export default function Selected({ title, data, change, defecto = "", width = "320px", placeholder = "Seleccione", clear, ...rest }: SelectedProps) {
-    const frameworks = createListCollection({
-        items: data
-    });
-    const [selected, setSelected] = useState<PropsOption['value']>(defecto);
-    const changing = (value: string) => {
-        setSelected(value);
-        change(value);
+export default function Selected({ title, data, change, defecto = "", width = "320px", placeholder = "Seleccione", clear = false, ...rest }: SelectedProps) {
+    const frameworks = createListCollection({ items: data });
+        
+    const changing = ({value} : {value: string[]}) => {
+        change(value[0]);
     }
     return (
         <SelectRoot
             collection={frameworks}
-            value={selected}
+            defaultValue={defecto}
             width={width}
             onValueChange={changing}
             {...rest}

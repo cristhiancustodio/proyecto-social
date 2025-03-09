@@ -1,10 +1,13 @@
 import { Box, Button, Flex, Select, Stack, Text } from "@chakra-ui/react";
-
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { ColorModeButton } from "@/components/ui/color-mode";
-import Selected from "@/components/Selected";
+
+import { listaMenu } from "./listaMenu";
+import axios from "axios";
+import { useEffect } from "react";
+import api from "../../config/API";
+import Selected from "../Selected";
 
 interface MenuItem {
     name: string;
@@ -39,30 +42,11 @@ function GenerateMenu({ menu }: GenerateMenuProps) {
 
 }
 
-export default function Menu() {
-    const menu = [
-        {
-            name: "Interacciones",
-            rout: '/interacciones'
-        },
-        {
-            name: "Logistica",
-            rout: '/logistica'
-        },
-        {
-            name: "Mentores",
-            rout: '/mentores',
-            children: [],
-        },
-        {
-            name: "Ingresa",
-            rout: '/abordajes',
-            children: [],
-        }
-    ];
+export default function Main() {
+
     const navigate = useNavigate();
     const goToJoin = () => {
-        navigate('/join');
+        navigate('/login');
     }
 
     const data = [
@@ -77,18 +61,36 @@ export default function Menu() {
     const cambiando = (value: string) => {
         console.log(value);
     }
+    function PokeApi() {
+        return axios.get('https://pokeapi.co/api/v2/pokemon/ditto');
+    }
+    function miAPi() {
+        return api.get('/posts');
+    }
+    useEffect(() => {
+        const seleccionar = () => {
+            Promise.all([miAPi(), PokeApi()])
+                .then(function (result) {
+                    
+                }).catch((err) => {
+
+                });
+        }
+        seleccionar();
+
+    }, []);
 
     return (
         <>
             <Box bg={"orange.500"} color="white" py={1}>
                 <Text textAlign="center">Foro oficial</Text>
             </Box>
-            <Flex justify="space-between" mx={{base:1, sm:10}} >
+            <Flex justify="space-between" mx={{ base: 1, sm: 10 }} >
                 <Box p={4}>
                     <Selected data={data} width="130px" title='Pais' defecto="1" size="xs" change={cambiando}></Selected>
                 </Box>
                 <Box display={{ base: "none", md: "flex" }} p={4}>
-                    <GenerateMenu menu={menu}></GenerateMenu>
+                    <GenerateMenu menu={listaMenu}></GenerateMenu>
                     <Button size='xs' bg={"orange.500"} onClick={goToJoin}>Registrate</Button>
                     <ColorModeButton />
                 </Box>

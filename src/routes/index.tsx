@@ -1,10 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Ejemplo2 from "../../ejemplo2";
+
 import Example from "../Example";
-import Menu from "../components/layout/menu";
+
+
+import Main from "../components/layout/Main";
+import Login from "../view/Login/Login";
 import Logistica from "../view/Logistica";
-import Interacciones from "../view/Interacciones";
+
 import Mentores from "../view/Mentores";
+import Interacciones from "../view/Interacciones";
+
 
 
 
@@ -12,7 +17,8 @@ export default function RouterBase() {
 
     return (
         <Routes>
-            <Route path="/" element={<Menu/>}>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/" element={<Main/>}>
                 <Route index element={<Example />}/>
                 <Route path="logistica" element={<Logistica />}/>
                 <Route path="interacciones" element={<Interacciones />}/>

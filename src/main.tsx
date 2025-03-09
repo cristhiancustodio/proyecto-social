@@ -6,6 +6,8 @@ import { ColorModeProvider } from "@/components/ui/color-mode.jsx"
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
 
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from 'react-oidc-context'
+import { cognitoAuthConfig } from './config/cognito.js'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -13,7 +15,9 @@ createRoot(document.getElementById('root')!).render(
 		<ChakraProvider value={defaultSystem}>
 			<ColorModeProvider>
 				<BrowserRouter>
-					<App/>
+					<AuthProvider {...cognitoAuthConfig}>
+						<App />
+					</AuthProvider>
 				</BrowserRouter>
 			</ColorModeProvider>
 		</ChakraProvider>
