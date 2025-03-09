@@ -1,14 +1,12 @@
-import { Button } from "@chakra-ui/react";
-
 type Props = {
-    nombre: string;
+    nombre?: string;
 }
 
 
 export default function Ejemplo2({ nombre }: Props) {
     return (
         <div className="">
-            <h1>Este es mi componente de ejemplo {nombre} </h1>
+            <h1>Logisticas en lima </h1>
         </div>
     )
 }

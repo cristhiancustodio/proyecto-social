@@ -35,7 +35,7 @@ export default function Example() {
                     <br />
                     <br />
                     <Box display="grid" gridTemplateColumns="repeat(3, minmax(0, 1fr))">
-                        <Box sm={8}>Item 1</Box>
+                        <Box>Item 1</Box>
                         <Box>Item 2</Box>
                         <Box>Item 3</Box>
                     </Box>
