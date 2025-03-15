@@ -71,7 +71,7 @@ export default function Main() {
         const seleccionar = () => {
             Promise.all([miAPi(), PokeApi()])
                 .then(function (result) {
-                    
+
                 }).catch((err) => {
 
                 });

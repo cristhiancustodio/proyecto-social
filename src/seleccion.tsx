@@ -1,4 +1,5 @@
 "use client"
+import React from "react"
 import { createListCollection, Stack } from "@chakra-ui/react"
 import {
     SelectContent,
@@ -7,7 +8,7 @@ import {
     SelectRoot,
     SelectTrigger,
     SelectValueText,
-} from "@/components/ui/select"
+} from "./components/ui/select"
 import { Radio, RadioGroup } from "./components/ui/radio"
 
 

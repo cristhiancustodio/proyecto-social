@@ -1,8 +1,10 @@
+import React from "react"
 import { ColorModeButton } from "./components/ui/color-mode"
 import { Badge, Box, Button, Card, Center, Container, Flex, Group, Input, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react"
-import { Field } from "@/components/ui/field"
+
 import Demo from "./seleccion"
 import { LuArrowRight } from "react-icons/lu"
+import { Field } from "./components/ui/field"
 
 export default function Example() {
     return (
@@ -97,7 +99,7 @@ export default function Example() {
                         <Card.Body>
                             <Stack gap="4" w="full">
                                 <Field label="First Name">
-                                    <Input />
+                                    <Input size="xs" />
                                 </Field>
                                 <Field label="Last Name">
                                     <Input size='xs' name="" placeholder="Holaaaaa...." />

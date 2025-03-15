@@ -1,18 +1,18 @@
+import React from 'react'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
-import { ColorModeProvider } from "@/components/ui/color-mode.jsx"
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
-
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from 'react-oidc-context'
 import { cognitoAuthConfig } from './config/cognito.js'
-
+import { ColorModeProvider } from './components/ui/color-mode.jsx';
+import { Provider } from './components/ui/provider.jsx';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<ChakraProvider value={defaultSystem}>
+		<Provider>
 			<ColorModeProvider>
 				<BrowserRouter>
 					<AuthProvider {...cognitoAuthConfig}>
@@ -20,6 +20,6 @@ createRoot(document.getElementById('root')!).render(
 					</AuthProvider>
 				</BrowserRouter>
 			</ColorModeProvider>
-		</ChakraProvider>
+		</Provider>
 	</StrictMode>,
 )

@@ -1,7 +1,9 @@
+import React from "react";
+import { Box } from "@chakra-ui/react"
+
 type Props = {
     nombre?: string;
 }
-
 
 export default function Ejemplo2({ nombre }: Props) {
     return (

@@ -1,32 +1,25 @@
 {
 	"compilerOptions": {
-		"useDefineForClassFields": true,
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"target": "esnext",
-		"module": "ESNext",
-		"moduleResolution": "bundler",
-		"strict": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"allowSyntheticDefaultImports": true,
-		"jsx": "react-jsx", // Para React con TypeScript
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"baseUrl": "./",
-		"paths": {
-			"@components/*": ["src/components/*"],
-		},
-		"types": [
-			"vite/client"
-		] // Para soportar import.meta.env en Vite
+	  "target": "ESNext",
+	  "useDefineForClassFields": true,
+	  "lib": ["DOM", "DOM.Iterable", "ESNext"],
+	  "allowJs": true,
+	  "skipLibCheck": true,
+	  "esModuleInterop": true,
+	  "allowSyntheticDefaultImports": true,
+	  "strict": true,
+	  "forceConsistentCasingInFileNames": true,
+	  "module": "ESNext",
+	  "moduleResolution": "node",
+	  "resolveJsonModule": true,
+	  "isolatedModules": true,
+	  "noEmit": true,
+	  "jsx": "react-jsx",
+	  "baseUrl": ".",
+	  "paths": {
+		"@/*": ["src/*"]
+	  }
 	},
-	"include": [
-		"src", "vite.config.ts"
-	],
-	"exclude": [
-		"node_modules",
-		"dist"
-	],
+	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]
-}
+  }
