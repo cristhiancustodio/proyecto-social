@@ -1,8 +1,17 @@
+import { Box, Text } from "@chakra-ui/react";
 
 
 export default function Logistica() {
     return (
-        <div className="">
-            <h1>Logisticas en lima </h1>
-        </div>)
+        <Box>
+            <Box>
+                <Text fontSize="2xl" fontWeight="semibold">Logisticas en todo Lima</Text>
+            </Box>
+
+            <Box>
+                
+            </Box>
+        </Box>
+
+    )
 }

@@ -5,6 +5,10 @@ type MenuProps ={
 }
 export const listaMenu: MenuProps[] = [
     {
+        name: "Inicio",
+        rout: '/'
+    },
+    {
         name: "Interacciones",
         rout: '/interacciones'
     },

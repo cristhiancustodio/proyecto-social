@@ -22,7 +22,7 @@ export default function Demo() {
                     <SelectValueText placeholder="Select movie" />
                 </SelectTrigger>
                 <SelectContent>
-                    {frameworks.items.map((movie: { value: string, label: string}) => (
+                    {frameworks.items.map((movie: { value: string, label: string }) => (
                         <SelectItem item={movie} key={movie.value}>
                             {movie.label}
                         </SelectItem>

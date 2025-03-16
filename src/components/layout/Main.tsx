@@ -19,7 +19,6 @@ interface GenerateMenuProps {
 }
 
 function GenerateMenu({ menu }: GenerateMenuProps) {
-
     return (
         <Box display="flex">
             {
@@ -39,7 +38,6 @@ function GenerateMenu({ menu }: GenerateMenuProps) {
             }
         </Box>
     )
-
 }
 
 export default function Main() {
@@ -59,7 +57,7 @@ export default function Main() {
     ];
 
     const cambiando = (value: string) => {
-        console.log(value);
+
     }
     function PokeApi() {
         return axios.get('https://pokeapi.co/api/v2/pokemon/ditto');

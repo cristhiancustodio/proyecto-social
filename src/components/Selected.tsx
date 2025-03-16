@@ -29,8 +29,8 @@ interface SelectedProps {
 
 export default function Selected({ title, data, change, defecto = "", width = "320px", placeholder = "Seleccione", clear = false, ...rest }: SelectedProps) {
     const frameworks = createListCollection({ items: data });
-        
-    const changing = ({value} : {value: string[]}) => {
+
+    const changing = ({ value }: { value: string[] }) => {
         change(value[0]);
     }
     return (
