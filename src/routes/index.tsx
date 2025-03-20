@@ -1,18 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
-import Example from "../Example";
-
-
 import Main from "../components/layout/Main";
 import Login from "../view/Login/Login";
 import Logistica from "../view/Logistica";
-
 import Mentores from "../view/Mentores";
 import Interacciones from "../view/Interacciones";
 import Inicio from "@/view/Inicio";
-import Post from "@/view/Inicio/post";
-
-
+import Post from "@/view/Inicio/Post";
 
 
 export default function RouterBase() {
